@@ -91,7 +91,7 @@ class User extends Model {
   async authenticateToekn(token) {
     try {
       token = jwt.verify(token, secret);
-      let userExists = await this.schema.findOne({ email: tokenObject.email });
+      let userExists = await this.schema.findOne({ email: token.email });
 
       if (userExists) {
         return Promise.resolve({
