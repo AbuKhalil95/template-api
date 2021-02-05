@@ -1,6 +1,6 @@
 'use strict';
 /**
- * gets the specified ID from mongoose db
+ * verifies valid actions defined by user role
  * @param {String} action is a route middleware input to validated needed action permission
 */
 module.exports = (action) => {

@@ -10,6 +10,11 @@ module.exports = (req, res, next) => {
   let bearer = req.headers.authorization.split(' ');
   if (bearer[0] == 'Bearer') {
     const token = bearer[1];
-    users.authenticate
+    users.authenticateToken(token).then(validUser => {
+      req.user = validUser;
+      next();
+    }).catch(err => next(err));
+  } else {
+    return next('Invalid Bearer!');
   }
 };

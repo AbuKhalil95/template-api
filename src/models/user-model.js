@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const secret = process.env.SECRET;
-const Model = require('./mongodb-model.js');
+const Model = require('./mongoose-model.js');
 
 /**
  * defines actions specified for each role
@@ -88,7 +88,7 @@ class User extends Model {
    * @param {Object} token will be comapred locally for quick and
    * streamlined authentication for every other request after singing 
    */
-  async authenticateToekn(token) {
+  async authenticateToken(token) {
     try {
       token = jwt.verify(token, secret);
       let userExists = await this.schema.findOne({ email: token.email });
