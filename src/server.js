@@ -30,7 +30,7 @@ app.use(serverErrorHandler); // error handler
 
 // all crud routes
 const v1Router = require('./router.js');
-app.use('/api/v1', v1Router);
+app.use('/api/v1/', v1Router);
 app.use('*', notFoundHandler);
 
 // socket implementation?

@@ -17,7 +17,7 @@ router.param('model', getModel);
 const bearerAuth = require('./middleware/bearer.js');
 const aclMiddleware = require('./middleware/acl-middleware.js');
 router.post('/:model', bearerAuth, aclMiddleware('read'), postItem);
-router.get('/:model/:id', bearerAuth, aclMiddleware('read'), getItem);
+router.get('/:model/:id?', bearerAuth, aclMiddleware('read'), getItem);
 router.put('/:model/:id', bearerAuth, aclMiddleware('read'), updateItem);
 router.delete('/:model/:id', bearerAuth, aclMiddleware('read'), deleteItem);
 
