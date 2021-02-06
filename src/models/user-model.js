@@ -13,7 +13,7 @@ const Model = require('./mongoose-model.js');
 
 let roles = {
   vendor: ['read', 'create', 'update'],
-  deliverer: ['read', 'create'],
+  deliverer: ['read', 'update'],
   receiver: ['read', 'create', 'update'],
   admin: ['read', 'create', 'update', 'delete'],
 };

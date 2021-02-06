@@ -5,9 +5,9 @@
 */
 module.exports = (action) => {
   return (req, res, next) => {
-    console.log('req.user.actions Actions available ', req.user.tokenObject.actions);
+    console.log('Actions available ', req.user.token.actions);
     try {
-      if (req.user.tokenObject.actions.includes(action)) {
+      if (req.user.token.actions.includes(action)) {
         next();
       } else {
         next('Invalid Action');

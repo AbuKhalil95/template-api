@@ -7,7 +7,8 @@ const router = express.Router();
 
 const authRouter = require('./routes/auth-router.js');
 const serverErrorHandler = require('./middleware/500.js');
-router.use(authRouter, serverErrorHandler);
+router.use(authRouter);
+router.use(serverErrorHandler);
 
 // ---------------------------------------- Generic Routes ---------------------------------------- //
 
@@ -16,10 +17,10 @@ router.param('model', getModel);
 
 const bearerAuth = require('./middleware/bearer.js');
 const aclMiddleware = require('./middleware/acl-middleware.js');
-router.post('/:model', bearerAuth, aclMiddleware('read'), postItem);
+router.post('/:model', bearerAuth, aclMiddleware('create'), postItem);
 router.get('/:model/:id?', bearerAuth, aclMiddleware('read'), getItem);
-router.put('/:model/:id', bearerAuth, aclMiddleware('read'), updateItem);
-router.delete('/:model/:id', bearerAuth, aclMiddleware('read'), deleteItem);
+router.put('/:model/:id', bearerAuth, aclMiddleware('update'), updateItem);
+router.delete('/:model/:id', bearerAuth, aclMiddleware('delete'), deleteItem);
 
 // ---------------------------------------- Specific Routes ---------------------------------------- //
 

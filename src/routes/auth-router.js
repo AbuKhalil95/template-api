@@ -46,3 +46,5 @@ function verifyAuth(req, res, next) {
 // function useOpenAuth(req, res, next) {
 //   res.status(200).send(req.token);
 // }
+
+module.exports = router;
