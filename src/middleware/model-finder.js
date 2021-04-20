@@ -18,10 +18,10 @@ module.exports = (req, res, next) => {
     req.model = user;
     next();
     break;
-  case 'notification':
-    req.model = notification;
-    next();
-    break;
+  // case 'notification':
+  //   req.model = notification;
+  //   next();
+  //   break;
   case 'request':
     req.model = request;
     next();

@@ -1,5 +1,5 @@
 {
-  "name": "azadi-api",
+  "name": "template-api",
   "version": "1.0.0",
   "description": "Waste food management with RESTful api.",
   "main": "index.js",
@@ -8,27 +8,10 @@
     "start": "nodemon -L ./index.js",
     "lint": "eslint '**/*.js'"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/azadi-food/azadi-api.git"
-  },
   "keywords": [
-    "waste",
-    "food",
-    "azadi",
-    "entrepreneurship",
-    "social",
-    "restful",
-    "mongodb",
-    "mongoose",
-    "rest"
   ],
   "author": "Yahya Abu Khalil",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/azadi-food/azadi-api/issues"
-  },
-  "homepage": "https://github.com/azadi-food/azadi-api#readme",
   "dependencies": {
     "base-64": "^1.0.0",
     "bcrypt": "^5.0.0",
@@ -38,7 +21,6 @@
     "eslint": "^7.18.0",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
-    "jest": "^26.6.3",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.15",
     "nodemon": "^2.0.7",
